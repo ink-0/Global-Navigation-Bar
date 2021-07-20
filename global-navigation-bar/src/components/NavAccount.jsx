@@ -29,8 +29,8 @@ export default NavAccount;
 const NavAccountDiv = styled.div``;
 const NavAccountUl = styled.ul`
   display: flex;
-  list-style: none;
   align-items: center;
+  list-style: none;
 `;
 const NavAccountLi = styled.li`
   display: flex;
@@ -41,7 +41,7 @@ const NavAccountLiBar = styled(NavAccountLi)`
     content: '';
     width: 1px;
     height: 10px;
-    background-color: #e1e2e3;
     margin: auto 10px;
+    background-color: #e1e2e3;
   }
 `;

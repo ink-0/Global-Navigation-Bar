@@ -16,8 +16,8 @@ const AccountUserDiv = styled.div`
   height: 32px;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
   border: 1px solid #e1e2e3;
+  border-radius: 50%;
   background-color: #fff;
   overflow: hidden;
 `;
