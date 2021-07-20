@@ -1,22 +1,31 @@
 import styled from 'styled-components';
-import { navData } from '../mock/navData';
+import { navData, navFoldData } from '../mock/navData';
 import { v4 as uuidv4 } from 'uuid';
 import NavMenuBadge from '../icons/NavMenuBadge';
 const NavMenu = () => {
   return (
-    <NavMenuUl>
-      {navData.map((nav) => (
-        <NavMenuLi key={uuidv4()}>
-          <NavMenuA>{nav}</NavMenuA>
+    <>
+      <NavMenuUl>
+        {navData.map((nav) => (
+          <NavMenuLi key={uuidv4()}>
+            <NavMenuA>{nav}</NavMenuA>
+          </NavMenuLi>
+        ))}
+        <NavMenuLi>
+          <NavMenuA>
+            Ai 합격예측
+            <NavMenuBadge />
+          </NavMenuA>
         </NavMenuLi>
-      ))}
-      <NavMenuLi>
-        <NavMenuA>
-          Ai 합격예측
-          <NavMenuBadge />
-        </NavMenuA>
-      </NavMenuLi>
-    </NavMenuUl>
+      </NavMenuUl>
+      <NavMenuFoldUl>
+        {navFoldData.map((nav) => (
+          <NavMenuLi key={uuidv4()}>
+            <NavMenuA>{nav}</NavMenuA>
+          </NavMenuLi>
+        ))}
+      </NavMenuFoldUl>
+    </>
   );
 };
 
@@ -27,12 +36,22 @@ const NavMenuUl = styled.ul`
   list-style: none;
   align-items: center;
   cursor: pointer;
-  outline: solid 1px red;
+  @media (max-width: 767px) {
+    display: none;
+  }
+`;
+
+const NavMenuFoldUl = styled.ul`
+  display: none;
+  @media (max-width: 767px) {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    cursor: pointer;
+  }
 `;
 const NavMenuLi = styled.li`
   display: flex;
-
-  outline: solid 1px;
 `;
 
 const NavMenuA = styled.a`
@@ -45,9 +64,5 @@ const NavMenuA = styled.a`
     padding-right: 0;
     padding-left: 0;
     font-size: 13px;
-  }
-
-  @media (max-width: 767px) {
-    display: none;
   }
 `;

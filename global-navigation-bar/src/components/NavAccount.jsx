@@ -14,15 +14,15 @@ const NavAccount = () => {
         <NavAccountLi>
           <AccountAlarmIcon />
         </NavAccountLi>
-        <NavAccountLi>
+        <NavAccountLiImg>
           <AccountUserImg />
-        </NavAccountLi>
-        <NavAccountLBurger>
+        </NavAccountLiImg>
+        <NavAccountLiBurger>
           <AccountHamburgerIcon />
-        </NavAccountLBurger>
-        <NavAccountLiBar>
+        </NavAccountLiBurger>
+        <NavAccountLiTag>
           <AccountTag />
-        </NavAccountLiBar>
+        </NavAccountLiTag>
       </NavAccountUl>
     </NavAccountDiv>
   );
@@ -39,7 +39,7 @@ const NavAccountLi = styled.li`
   display: flex;
   padding: 0 10px;
 `;
-const NavAccountLiBar = styled(NavAccountLi)`
+const NavAccountLiTag = styled(NavAccountLi)`
   ::before {
     content: '';
     width: 1px;
@@ -51,7 +51,14 @@ const NavAccountLiBar = styled(NavAccountLi)`
     }
   }
 `;
-const NavAccountLBurger = styled.li`
+const NavAccountLiImg = styled(NavAccountLi)`
+  display: flex;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+`;
+const NavAccountLiBurger = styled(NavAccountLi)`
   display: none;
   @media (max-width: 767px) {
     display: flex;
