@@ -20,6 +20,9 @@ const AccountUserDiv = styled.div`
   border-radius: 50%;
   background-color: #fff;
   overflow: hidden;
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 
 const UserImg = styled.div`

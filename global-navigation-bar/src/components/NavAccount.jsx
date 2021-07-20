@@ -17,6 +17,9 @@ const NavAccount = () => {
         <NavAccountLi>
           <AccountUserImg />
         </NavAccountLi>
+        <NavAccountLBurger>
+          <AccountHamburgerIcon />
+        </NavAccountLBurger>
         <NavAccountLiBar>
           <AccountTag />
         </NavAccountLiBar>
@@ -43,5 +46,14 @@ const NavAccountLiBar = styled(NavAccountLi)`
     height: 10px;
     margin: auto 10px;
     background-color: #e1e2e3;
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+`;
+const NavAccountLBurger = styled.li`
+  display: none;
+  @media (max-width: 767px) {
+    display: flex;
   }
 `;
