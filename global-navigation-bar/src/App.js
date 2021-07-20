@@ -17,9 +17,12 @@ export default App;
 
 const AppDiv = styled.div`
   position: relative;
-  max-width: 1060px;
   height: 50px;
+  max-width: 1060px;
   margin: 0 auto;
+  color: #333333;
+  font-size: 14px;
+  line-height: 1.42857143;
 
   @media (min-width: 1200px) {
     width: 87.72%;
