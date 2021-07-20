@@ -1,15 +1,19 @@
+import { createContext, useState } from 'react';
 import styled from 'styled-components';
 import NavBar from './components/NavBar';
 import GlobalStyles from './GlobalStyles';
 
+export const DropContext = createContext();
+
 function App() {
+  const [isDrop, setIsDrop] = useState(false);
   return (
-    <>
+    <DropContext.Provider value={{ isDrop, setIsDrop }}>
       <GlobalStyles />
       <AppDiv className="App">
         <NavBar />
       </AppDiv>
-    </>
+    </DropContext.Provider>
   );
 }
 

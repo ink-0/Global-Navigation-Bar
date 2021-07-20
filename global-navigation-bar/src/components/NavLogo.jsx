@@ -10,4 +10,8 @@ const NavLogo = () => {
 
 export default NavLogo;
 
-const NavLogoSvg = styled.div``;
+const NavLogoSvg = styled.div`
+  @media (max-width: 767px) {
+    display: none;
+  }
+`;

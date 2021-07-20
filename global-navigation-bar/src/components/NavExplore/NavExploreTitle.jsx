@@ -19,13 +19,13 @@ const NavExploreTitleDiv = styled.a`
 `;
 const NavTitle = styled.h2`
   position: relative;
+  width: 100%;
   font-size: 17px;
   color: #333;
   line-height: 20px;
   vertical-align: top;
   padding-right: 20px;
   padding-bottom: 15px;
-  width: 100%;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;

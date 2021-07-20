@@ -1,13 +1,22 @@
+import { v4 as uuidv4 } from 'uuid';
 import styled from 'styled-components';
+import { useContext } from 'react';
 import NavExploreContent from './NavExploreContent';
 import NavExploreTitle from './NavExploreTitle';
 import { dropData, dropMoreData } from '../../mock/navData';
-import { v4 as uuidv4 } from 'uuid';
+import { DropContext } from '../../App';
 
 const NavExplore = () => {
+  const { isDrop, setIsDrop } = useContext(DropContext);
+  const handleNavExploreClose = () => {
+    setIsDrop(false);
+  };
   return (
-    <NavExploreDropDiv>
-      <NavExploreContainer>
+    <NavExploreDropDiv isDrop={isDrop}>
+      <NavExploreContainer
+        isDrop={isDrop}
+        onMouseLeave={() => handleNavExploreClose()}
+      >
         <NavExploreDiv>
           <NavExploreRow>
             {dropData.map(({ title, contents }) => (
@@ -37,17 +46,16 @@ const NavExploreDropDiv = styled.div`
   right: 0;
   bottom: 0;
   top: 50px;
-
-  /* background-color: rgba(0, 0, 0, 0.4); */
-  /* height: 0; */
-  /* opacity: 0; */
+  opacity: ${({ isDrop }) => (isDrop ? 1 : 0)};
+  background-color: rgba(0, 0, 0, 0.4);
+  height: auto;
   overflow: hidden;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 `;
 const NavExploreContainer = styled.div`
   position: relative;
-  height: 0%;
+  height: ${({ isDrop }) => (isDrop ? '100%' : 0)};
   max-height: 625px;
   background-color: #fff;
   -webkit-transition: 0.5s;

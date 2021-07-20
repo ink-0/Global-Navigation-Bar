@@ -6,6 +6,7 @@ const navData = [
   '매치업',
   '프리랜서',
 ];
+const navFoldData = ['홈', '탐색', '커리어성장'];
 
 const dropData = [
   {
@@ -87,4 +88,4 @@ const dropMoreData = [
   '공공·복지',
 ];
 
-export { navData, dropData, dropMoreData };
+export { navData, navFoldData, dropData, dropMoreData };
