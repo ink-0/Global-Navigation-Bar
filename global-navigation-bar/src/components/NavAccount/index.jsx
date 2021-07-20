@@ -1,9 +1,10 @@
 import styled from 'styled-components';
-import AccountSearchIcon from '../icons/AccountSearchIcon';
-import AccountAlarmIcon from '../icons/AccountAlarmIcon';
+import AccountSearchIcon from '../../icons/AccountSearchIcon';
+import AccountAlarmIcon from '../../icons/AccountAlarmIcon';
 import AccountUserImg from './AccountUserImg';
 import AccountTag from './AccountTag';
-import AccountHamburgerIcon from '../icons/AccountHamburgerIcon';
+import AccountHamburgerIcon from '../../icons/AccountHamburgerIcon';
+
 const NavAccount = () => {
   return (
     <NavAccountDiv>
@@ -29,7 +30,9 @@ const NavAccount = () => {
 };
 
 export default NavAccount;
+
 const NavAccountDiv = styled.div``;
+
 const NavAccountUl = styled.ul`
   display: flex;
   align-items: center;

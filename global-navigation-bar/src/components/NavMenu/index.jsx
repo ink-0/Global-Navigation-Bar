@@ -1,13 +1,22 @@
-import styled from 'styled-components';
-import { navData, navFoldData } from '../mock/navData';
 import { v4 as uuidv4 } from 'uuid';
-import NavMenuBadge from '../icons/NavMenuBadge';
+import styled from 'styled-components';
+import { useContext } from 'react';
+import NavMenuBadge from '../../icons/NavMenuBadge';
+import { navData, navFoldData } from '../../mock/navData';
+import { DropContext } from '../../App';
+
 const NavMenu = () => {
+  const { setIsDrop } = useContext(DropContext);
+
+  const handleNavExploreDown = () => {
+    setIsDrop(true);
+  };
+
   return (
     <>
       <NavMenuUl>
         {navData.map((nav) => (
-          <NavMenuLi key={uuidv4()}>
+          <NavMenuLi key={uuidv4()} onMouseEnter={() => handleNavExploreDown()}>
             <NavMenuA>{nav}</NavMenuA>
           </NavMenuLi>
         ))}
@@ -39,6 +48,11 @@ const NavMenuUl = styled.ul`
   @media (max-width: 767px) {
     display: none;
   }
+  @media screen and (min-width: 768px) and (max-width: 974px) {
+    display: flex;
+    flex: 1;
+    justify-content: space-evenly;
+  }
 `;
 
 const NavMenuFoldUl = styled.ul`
@@ -59,10 +73,13 @@ const NavMenuA = styled.a`
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
-  padding: 15px;
+  padding: 12px;
+  display: flex;
+
   @media screen and (min-width: 768px) and (max-width: 974px) {
     padding-right: 0;
     padding-left: 0;
-    font-size: 13px;
+    font-size: 12px;
+    padding: 1px;
   }
 `;

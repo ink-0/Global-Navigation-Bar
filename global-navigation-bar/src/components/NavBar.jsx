@@ -21,4 +21,6 @@ const NavBarDiv = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 9px 0;
+  box-shadow: 0 1px 0 0 rgb(0 0 0 / 10%);
+  z-index: 100;
 `;

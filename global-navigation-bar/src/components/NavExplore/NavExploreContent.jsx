@@ -16,10 +16,10 @@ const NavExploreContentDiv = styled.a`
 `;
 const NavContent = styled.h3`
   position: relative;
+  width: 100%;
+  padding: 5px 20px 5px 0;
   font-size: 13px;
   color: #999;
-  padding: 5px 20px 5px 0;
-  width: 100%;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
